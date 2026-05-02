@@ -17,18 +17,33 @@ body {
 }
 
 .desc {
-  @apply text-base sm:text-lg md:text-[24px] mt-6 text-slate-600 dark:text-slate-300;
+  @apply text-base sm:text-lg md:text-2xl font-normal mt-6 text-black/75 dark:text-slate-300;
 }
 
-/* .hero-text {
-  @apply px-6 md:px-20 md:pt-13 md:pb-19 md:pr-129 md:w-4xl;
+.sub-heading {
+  @apply font-semibold text-3xl sm:text-4xl md:text-5xl tracking-tight;
 }
 
-.text-heading {
-  @apply text-[64px] font-bold leading-[100%] tracking-[-0.02em];
-  font-family: "Inter", sans-serif;
+.featured-section {
+  @apply px-6 mt-37.5 md:px-20;
 }
 
-.sub-text {
-  @apply text-xl font-normal;
-} */
+.cards-wrapper {
+  @apply mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8;
+}
+
+.card {
+  @apply w-full;
+}
+
+.card-image {
+  @apply w-full aspect-square object-contain rounded-lg;
+}
+
+.card-title {
+  @apply text-2xl font-medium text-black mt-6;
+}
+
+.card-content {
+  @apply pr-6;
+}
