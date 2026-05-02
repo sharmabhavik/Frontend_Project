@@ -9,7 +9,7 @@ body {
 }
 
 .btn {
-  @apply bg-black text-white rounded-lg px-3 py-2 md:px-6 md:py-3.5 dark:bg-white dark:text-black;
+  @apply bg-black text-white rounded-lg px-3 py-2 md:px-6 md:py-3.5 dark:bg-white dark:text-black cursor-pointer transition-all duration-100 ease-in hover:bg-black/50 dark:hover:bg-white/90;
 }
 
 .heading {
@@ -21,7 +21,7 @@ body {
 }
 
 .sub-heading {
-  @apply font-semibold text-3xl sm:text-4xl md:text-5xl tracking-tight;
+  @apply font-semibold text-3xl text-black sm:text-4xl md:text-5xl tracking-tight dark:text-white;
 }
 
 .featured-section {
@@ -33,7 +33,7 @@ body {
 }
 
 .card {
-  @apply w-full;
+  @apply w-full dark:text-white;
 }
 
 .card-image {
@@ -41,7 +41,7 @@ body {
 }
 
 .card-title {
-  @apply text-2xl font-medium text-black mt-6;
+  @apply text-2xl font-medium text-black dark:text-white mt-6;
 }
 
 .card-content {
