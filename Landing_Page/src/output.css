@@ -12,7 +12,6 @@
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
@@ -242,6 +241,9 @@
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
   }
+  .mt-6\! {
+    margin-top: calc(var(--spacing) * 6) !important;
+  }
   .mt-10 {
     margin-top: calc(var(--spacing) * 10);
   }
@@ -253,6 +255,12 @@
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
+  }
+  .mt-37 {
+    margin-top: calc(var(--spacing) * 37);
+  }
+  .mt-37\.5 {
+    margin-top: calc(var(--spacing) * 37.5);
   }
   .mt-45 {
     margin-top: calc(var(--spacing) * 45);
@@ -281,9 +289,6 @@
   .table {
     display: table;
   }
-  .aspect-square {
-    aspect-ratio: 1 / 1;
-  }
   .aspect-video {
     aspect-ratio: var(--aspect-video);
   }
@@ -293,14 +298,8 @@
   .h-109 {
     height: calc(var(--spacing) * 109);
   }
-  .h-125 {
-    height: calc(var(--spacing) * 125);
-  }
   .h-160 {
     height: calc(var(--spacing) * 160);
-  }
-  .h-\[436px\] {
-    height: 436px;
   }
   .h-auto {
     height: auto;
@@ -310,9 +309,6 @@
   }
   .w-156 {
     width: calc(var(--spacing) * 156);
-  }
-  .w-\[624px\] {
-    width: 624px;
   }
   .w-full {
     width: 100%;
@@ -328,9 +324,6 @@
   }
   .max-w-211 {
     max-width: calc(var(--spacing) * 211);
-  }
-  .max-w-\[840px\] {
-    max-width: 840px;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -431,9 +424,6 @@
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
-  .bg-\[var\(--color-white\)\] {
-    background-color: var(--color-white);
-  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -448,12 +438,6 @@
   }
   .object-cover {
     object-fit: cover;
-  }
-  .p-6 {
-    padding: calc(var(--spacing) * 6);
-  }
-  .p-20 {
-    padding: calc(var(--spacing) * 20);
   }
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
@@ -545,23 +529,8 @@
   .text-\(--color-gray-medium\)\! {
     color: var(--color-gray-medium) !important;
   }
-  .text-\[\#454545\] {
-    color: #454545;
-  }
-  .text-\[\#828282\]\! {
-    color: #828282 !important;
-  }
-  .text-\[var\(--color-gray-dark\)\] {
-    color: var(--color-gray-dark);
-  }
-  .text-\[var\(--color-gray-medium\)\]\! {
-    color: var(--color-gray-medium) !important;
-  }
   .text-black {
     color: var(--color-black);
-  }
-  .text-gray-600 {
-    color: var(--color-gray-600);
   }
   .text-gray-900 {
     color: var(--color-gray-900);
@@ -627,11 +596,6 @@
       justify-content: space-between;
     }
   }
-  .sm\:p-20 {
-    @media (width >= 40rem) {
-      padding: calc(var(--spacing) * 20);
-    }
-  }
   .sm\:px-20 {
     @media (width >= 40rem) {
       padding-inline: calc(var(--spacing) * 20);
@@ -641,6 +605,12 @@
     @media (width >= 40rem) {
       font-size: var(--text-base);
       line-height: var(--tw-leading, var(--text-base--line-height));
+    }
+  }
+  .sm\:text-xl {
+    @media (width >= 40rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
     }
   }
   .md\:col-span-1 {
@@ -678,11 +648,6 @@
       gap: calc(var(--spacing) * 16);
     }
   }
-  .md\:p-20 {
-    @media (width >= 48rem) {
-      padding: calc(var(--spacing) * 20);
-    }
-  }
   .md\:px-6\! {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 6) !important;
@@ -701,21 +666,6 @@
   .md\:px-20 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 20);
-    }
-  }
-  .md\:px-74\.75 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 74.75);
-    }
-  }
-  .md\:px-\[29\] {
-    @media (width >= 48rem) {
-      padding-inline: 29;
-    }
-  }
-  .md\:px-\[299px\] {
-    @media (width >= 48rem) {
-      padding-inline: 299px;
     }
   }
   .md\:py-3\! {
@@ -807,11 +757,6 @@
   .lg\:gap-x-36 {
     @media (width >= 64rem) {
       column-gap: calc(var(--spacing) * 36);
-    }
-  }
-  .dark\:bg-\[var\(--color-black\)\] {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-black);
     }
   }
   .dark\:bg-black {
@@ -1002,7 +947,6 @@ body {
   object-fit: contain;
 }
 .card-title {
-  margin-top: calc(var(--spacing) * 6);
   font-size: var(--text-2xl);
   line-height: var(--tw-leading, var(--text-2xl--line-height));
   --tw-font-weight: var(--font-weight-medium);

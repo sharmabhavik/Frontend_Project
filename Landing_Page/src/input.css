@@ -86,7 +86,7 @@ body {
 }
 
 .card-title {
-  @apply text-2xl font-medium mt-6;
+  @apply text-2xl font-medium;
   color: var(--color-black);
 }
 .dark .card-title {
