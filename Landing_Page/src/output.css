@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-600: oklch(57.7% 0.245 27.325);
+    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-slate-950: oklch(12.9% 0.042 264.695);
@@ -40,6 +42,7 @@
     --radius-lg: 0.5rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --blur-lg: 16px;
+    --aspect-video: 16 / 9;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -225,6 +228,18 @@
   .mt-45 {
     margin-top: calc(var(--spacing) * 45);
   }
+  .mt-47 {
+    margin-top: calc(var(--spacing) * 47);
+  }
+  .mt-47\.75 {
+    margin-top: calc(var(--spacing) * 47.75);
+  }
+  .mt-191 {
+    margin-top: calc(var(--spacing) * 191);
+  }
+  .mt-\[191px\] {
+    margin-top: 191px;
+  }
   .flex {
     display: flex;
   }
@@ -236,6 +251,12 @@
   }
   .table {
     display: table;
+  }
+  .aspect-video {
+    aspect-ratio: var(--aspect-video);
+  }
+  .aspect-video\! {
+    aspect-ratio: var(--aspect-video) !important;
   }
   .h-160 {
     height: calc(var(--spacing) * 160);
@@ -282,8 +303,31 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
+  .gap-7 {
+    gap: calc(var(--spacing) * 7);
+  }
+  .gap-7\.75 {
+    gap: calc(var(--spacing) * 7.75);
+  }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
+  }
+  .gap-\[31px\] {
+    gap: 31px;
+  }
+  .space-y-8 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 8) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 8) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-y-12 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-x-12 {
     :where(& > :not(:last-child)) {
@@ -304,6 +348,9 @@
   }
   .bg-\[\#E6E6E6\] {
     background-color: #E6E6E6;
+  }
+  .bg-red-600 {
+    background-color: var(--color-red-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -406,6 +453,11 @@
     --tw-ease: var(--ease-in);
     transition-timing-function: var(--ease-in);
   }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
   .md\:mt-20 {
     @media (width >= 48rem) {
       margin-top: calc(var(--spacing) * 20);
@@ -485,11 +537,6 @@
       }
     }
   }
-  .dark\:bg-gray-400 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-gray-400);
-    }
-  }
   .dark\:bg-gray-400\/50 {
     @media (prefers-color-scheme: dark) {
       background-color: color-mix(in srgb, oklch(70.7% 0.022 261.325) 50%, transparent);
@@ -498,9 +545,9 @@
       }
     }
   }
-  .dark\:bg-white {
+  .dark\:bg-green-500 {
     @media (prefers-color-scheme: dark) {
-      background-color: var(--color-white);
+      background-color: var(--color-green-500);
     }
   }
   .dark\:text-gray-100 {
@@ -679,6 +726,11 @@ body {
 .card-content {
   padding-right: calc(var(--spacing) * 6);
 }
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
 @property --tw-space-x-reverse {
   syntax: "*";
   inherits: false;
@@ -814,6 +866,7 @@ body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
