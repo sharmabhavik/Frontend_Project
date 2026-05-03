@@ -7,8 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-600: oklch(57.7% 0.245 27.325);
-    --color-green-500: oklch(72.3% 0.219 149.579);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-slate-950: oklch(12.9% 0.042 264.695);
@@ -207,9 +205,6 @@
   .z-50 {
     z-index: 50;
   }
-  .mt-1 {
-    margin-top: calc(var(--spacing) * 1);
-  }
   .mt-1\! {
     margin-top: calc(var(--spacing) * 1) !important;
   }
@@ -228,17 +223,8 @@
   .mt-45 {
     margin-top: calc(var(--spacing) * 45);
   }
-  .mt-47 {
-    margin-top: calc(var(--spacing) * 47);
-  }
   .mt-47\.75 {
     margin-top: calc(var(--spacing) * 47.75);
-  }
-  .mt-191 {
-    margin-top: calc(var(--spacing) * 191);
-  }
-  .mt-\[191px\] {
-    margin-top: 191px;
   }
   .flex {
     display: flex;
@@ -251,9 +237,6 @@
   }
   .table {
     display: table;
-  }
-  .aspect-video {
-    aspect-ratio: var(--aspect-video);
   }
   .aspect-video\! {
     aspect-ratio: var(--aspect-video) !important;
@@ -303,17 +286,11 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
-  .gap-7 {
-    gap: calc(var(--spacing) * 7);
-  }
   .gap-7\.75 {
     gap: calc(var(--spacing) * 7.75);
   }
   .gap-12 {
     gap: calc(var(--spacing) * 12);
-  }
-  .gap-\[31px\] {
-    gap: 31px;
   }
   .space-y-8 {
     :where(& > :not(:last-child)) {
@@ -348,9 +325,6 @@
   }
   .bg-\[\#E6E6E6\] {
     background-color: #E6E6E6;
-  }
-  .bg-red-600 {
-    background-color: var(--color-red-600);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -410,6 +384,9 @@
   .tracking-wide {
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
+  }
+  .text-\[\#828282\] {
+    color: #828282;
   }
   .text-\[\#828282\]\! {
     color: #828282 !important;
@@ -514,6 +491,11 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
   .lg\:items-stretch {
     @media (width >= 64rem) {
       align-items: stretch;
@@ -543,11 +525,6 @@
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklab, var(--color-gray-400) 50%, transparent);
       }
-    }
-  }
-  .dark\:bg-green-500 {
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-green-500);
     }
   }
   .dark\:text-gray-100 {
@@ -725,6 +702,48 @@ body {
 }
 .card-content {
   padding-right: calc(var(--spacing) * 6);
+}
+.testimonial-card {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  padding: calc(var(--spacing) * 6);
+  @media (width >= 40rem) {
+    padding: calc(var(--spacing) * 8);
+  }
+}
+.testimonial-card-avatar-text {
+  display: flex;
+  justify-content: flex-start;
+  gap: calc(var(--spacing) * 4);
+}
+.testimonial-text-avatar-heading {
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.testimonial-avatar {
+  width: calc(var(--spacing) * 11.25);
+  height: calc(var(--spacing) * 11.25);
+}
+.testimonial-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: calc(var(--spacing) * 0.5);
+  padding-block: 2.5px;
+}
+.testimonial-text-heading {
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+}
+.testimonial-text-desc {
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: #828282;
 }
 @property --tw-space-y-reverse {
   syntax: "*";

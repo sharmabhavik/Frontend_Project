@@ -47,3 +47,31 @@ body {
 .card-content {
   @apply pr-6;
 }
+
+.testimonial-card {
+  @apply p-6 space-y-6 sm:p-8;
+}
+
+.testimonial-card-avatar-text {
+  @apply flex justify-start gap-4;
+}
+
+.testimonial-text-avatar-heading {
+  @apply text-2xl font-medium;
+}
+
+.testimonial-avatar {
+  @apply size-11.25;
+}
+
+.testimonial-text {
+  @apply flex flex-col items-start gap-0.5 py-[2.5px];
+}
+
+.testimonial-text-heading {
+  @apply font-medium;
+}
+
+.testimonial-text-desc {
+  @apply font-medium text-[#828282];
+}
