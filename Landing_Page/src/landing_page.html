@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
-<body class="bg-white text-gray-900  dark:bg-black dark:text-gray-100">
+<body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
     <header class="sticky top-0 z-50">
         <nav
             class="bg-white/40 dark:bg-black/70 backdrop-blur-lg text-black dark:text-white transition-all duration-500 ease-in">
@@ -64,7 +64,7 @@
                             alt="Fresh fruits and wine">
                         <div class="card-content">
                             <h3 class="card-title">Subheading</h3>
-                            <p class="desc text-[#828282]! mt-1!">
+                            <p class="desc text-(--color-gray-medium)! mt-1!">
                                 Body text for whatever you'd like to add more to the subheading.
                             </p>
                         </div>
@@ -74,7 +74,7 @@
                         <img class="card-image" src="Images/hero-gallery/basket_of_fruits.png" alt="Basket of fruits">
                         <div class="card-content">
                             <h3 class="card-title">Subheading</h3>
-                            <p class="desc text-[#828282]! mt-1!">
+                            <p class="desc text-(--color-gray-medium)! mt-1!">
                                 Body text for whatever you'd like to expand on the main point.
                             </p>
                         </div>
@@ -85,7 +85,7 @@
                             alt="Fruit platter and wine">
                         <div class="card-content">
                             <h3 class="card-title">Subheading</h3>
-                            <p class="desc text-[#828282]! mt-1! ">
+                            <p class="desc text-(--color-gray-medium)! mt-1! ">
                                 Body text for whatever you'd like to share more.
                             </p>
                         </div>
@@ -120,13 +120,13 @@
 
                     </div>
 
-                    <div class="mt-12 flex flex-wrap gap-4">
+                    <div class="mt-12 flex gap-4">
 
-                        <button class="btn px-6 py-3">
+                        <button class="btn px-3! py-3! md:px-6! md:py-3!">
                             Button
                         </button>
 
-                        <button class="sec">
+                        <button class="sec px-6! py-3!">
                             Secondary button
                         </button>
 
@@ -136,9 +136,6 @@
 
                 <div class="flex lg:items-stretch"> <img class="w-full h-full object-cover rounded-lg lg:max-h-none"
                         src="Images/split_section_image/split_right_image.png" alt="Fruits and basket" /> </div>
-
-                <!-- <img class="w-full h-125 object-cover rounded-lg" src="Images/split_section_image/split_right_image.png"
-                    alt="Fruits and basket" /> -->
 
             </div>
         </section>
@@ -152,7 +149,7 @@
                             src="Images/card-gallery/first-card-image.png" alt="Fruit platter and wine">
                         <div class="card-content">
                             <h3 class="card-title">Subheading</h3>
-                            <p class="desc text-[#828282]! mt-1! ">
+                            <p class="desc text-(--color-gray-medium)! mt-1! ">
                                 Body text for whatever you'd like to share more.
                             </p>
                         </div>
@@ -160,10 +157,10 @@
 
                     <div class="card space-y-8">
                         <img class="card-image aspect-video! object-contain"
-                            src="Images/card-gallery/first-card-image.png" alt="Fruit platter and wine">
+                            src="Images/card-gallery/second-card-image.png" alt="Fruit platter and wine">
                         <div class="card-content">
                             <h3 class="card-title">Subheading</h3>
-                            <p class="desc text-[#828282]! mt-1! ">
+                            <p class="desc text-(--color-gray-medium)! mt-1! ">
                                 Body text for whatever you'd like to share more.
                             </p>
                         </div>
@@ -180,8 +177,8 @@
                     <div class="testimonial-card">
                         <h2 class="testimonial-text-avatar-heading">"A terrific piece of purpose"</h2>
                         <div class="testimonial-card-avatar-text">
-                            <img src="Images/testimonial-section-avatars/first-card-avatar.png"
-                                class="testimonial-avatar" alt="">
+                            <img src="Images/testimonial-section-avatars/first-avatar.svg" class="testimonial-avatar"
+                                alt="testimonial-person-profile">
                             <div class="testimonial-text">
                                 <h3 class="testimonial-text-heading">Name</h3>
                                 <p class="testimonial-text-desc">Description</p>
@@ -191,8 +188,8 @@
                     <div class="testimonial-card">
                         <h2 class="testimonial-text-avatar-heading">"A terrific piece of purpose"</h2>
                         <div class="testimonial-card-avatar-text">
-                            <img src="Images/testimonial-section-avatars/first-card-avatar.png"
-                                class="testimonial-avatar" alt="">
+                            <img src="Images/testimonial-section-avatars/second-avatar.svg" class="testimonial-avatar"
+                                alt="testimonial-person-profile">
                             <div class="testimonial-text">
                                 <h3 class="testimonial-text-heading">Name</h3>
                                 <p class="testimonial-text-desc">Description</p>
@@ -202,8 +199,8 @@
                     <div class="testimonial-card">
                         <h2 class="testimonial-text-avatar-heading">"A terrific piece of purpose"</h2>
                         <div class="testimonial-card-avatar-text">
-                            <img src="Images/testimonial-section-avatars/first-card-avatar.png"
-                                class="testimonial-avatar" alt="">
+                            <img src="Images/testimonial-section-avatars/third-avatar.svg" class="testimonial-avatar"
+                                alt="testimonial-person-profile">
                             <div class="testimonial-text">
                                 <h3 class="testimonial-text-heading">Name</h3>
                                 <p class="testimonial-text-desc">Description</p>
@@ -251,7 +248,7 @@
 
                         <div>
                             <h2 class="font-semibold mb-6">Home</h2>
-                            <ul class="space-y-6 text-[#454545]">
+                            <ul class="space-y-6 text-(--color-gray-dark)">
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
@@ -260,7 +257,7 @@
 
                         <div>
                             <h2 class="font-semibold mb-6">About</h2>
-                            <ul class="space-y-6 text-[#454545]">
+                            <ul class="space-y-6 text-(--color-gray-dark)">
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
@@ -269,7 +266,7 @@
 
                         <div>
                             <h2 class="font-semibold mb-6">Services</h2>
-                            <ul class="space-y-6 text-[#454545]">
+                            <ul class="space-y-6 text-(--color-gray-dark)">
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
                                 <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>

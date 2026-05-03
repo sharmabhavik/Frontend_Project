@@ -12,7 +12,6 @@
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-200: oklch(92.8% 0.006 264.531);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-900: oklch(21% 0.034 264.665);
     --color-black: #000;
     --color-white: #fff;
@@ -41,6 +40,7 @@
     --tracking-wide: 0.025em;
     --radius-sm: 0.25rem;
     --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --blur-lg: 16px;
     --aspect-video: 16 / 9;
@@ -286,6 +286,9 @@
   .border-collapse {
     border-collapse: collapse;
   }
+  .transform {
+    transform: var(--tw-rotate-x,) var(--tw-rotate-y,) var(--tw-rotate-z,) var(--tw-skew-x,) var(--tw-skew-y,);
+  }
   .resize {
     resize: both;
   }
@@ -300,9 +303,6 @@
   }
   .flex-row {
     flex-direction: row;
-  }
-  .flex-wrap {
-    flex-wrap: wrap;
   }
   .items-center {
     align-items: center;
@@ -379,6 +379,9 @@
   .border-gray-200 {
     border-color: var(--color-gray-200);
   }
+  .bg-\[var\(--color-white\)\] {
+    background-color: var(--color-white);
+  }
   .bg-white {
     background-color: var(--color-white);
   }
@@ -397,11 +400,23 @@
   .px-1 {
     padding-inline: calc(var(--spacing) * 1);
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
+  .px-3\! {
+    padding-inline: calc(var(--spacing) * 3) !important;
+  }
   .px-6 {
     padding-inline: calc(var(--spacing) * 6);
   }
+  .px-6\! {
+    padding-inline: calc(var(--spacing) * 6) !important;
+  }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
+  }
+  .py-3\! {
+    padding-block: calc(var(--spacing) * 3) !important;
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
@@ -455,11 +470,23 @@
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
   }
+  .text-\(--color-gray-dark\) {
+    color: var(--color-gray-dark);
+  }
+  .text-\(--color-gray-medium\)\! {
+    color: var(--color-gray-medium) !important;
+  }
   .text-\[\#454545\] {
     color: #454545;
   }
   .text-\[\#828282\]\! {
     color: #828282 !important;
+  }
+  .text-\[var\(--color-gray-dark\)\] {
+    color: var(--color-gray-dark);
+  }
+  .text-\[var\(--color-gray-medium\)\]\! {
+    color: var(--color-gray-medium) !important;
   }
   .text-black {
     color: var(--color-black);
@@ -558,6 +585,11 @@
       gap: calc(var(--spacing) * 16);
     }
   }
+  .md\:px-6\! {
+    @media (width >= 48rem) {
+      padding-inline: calc(var(--spacing) * 6) !important;
+    }
+  }
   .md\:px-8 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 8);
@@ -571,6 +603,11 @@
   .md\:px-20 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 20);
+    }
+  }
+  .md\:py-3\! {
+    @media (width >= 48rem) {
+      padding-block: calc(var(--spacing) * 3) !important;
     }
   }
   .md\:py-5 {
@@ -592,11 +629,6 @@
     @media (width >= 48rem) {
       font-size: var(--text-xl);
       line-height: var(--tw-leading, var(--text-xl--line-height));
-    }
-  }
-  .lg\:col-span-2 {
-    @media (width >= 64rem) {
-      grid-column: span 2 / span 2;
     }
   }
   .lg\:col-span-3 {
@@ -622,16 +654,6 @@
   .lg\:grid-cols-3 {
     @media (width >= 64rem) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  .lg\:grid-cols-4 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-  .lg\:grid-cols-5 {
-    @media (width >= 64rem) {
-      grid-template-columns: repeat(5, minmax(0, 1fr));
     }
   }
   .lg\:grid-cols-6 {
@@ -669,6 +691,11 @@
       column-gap: calc(var(--spacing) * 36);
     }
   }
+  .dark\:bg-\[var\(--color-black\)\] {
+    @media (prefers-color-scheme: dark) {
+      background-color: var(--color-black);
+    }
+  }
   .dark\:bg-black {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-black);
@@ -693,6 +720,14 @@
     }
   }
 }
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #e6e6e6;
+  --color-gray-medium: #828282;
+  --color-gray-dark: #454545;
+  --color-border: #e6e6e6;
+}
 body {
   font-family: "Inter", sans-serif;
 }
@@ -712,10 +747,8 @@ body {
 .btn {
   cursor: pointer;
   border-radius: var(--radius-lg);
-  background-color: var(--color-black);
   padding-inline: calc(var(--spacing) * 3);
   padding-block: calc(var(--spacing) * 2);
-  color: var(--color-white);
   transition-property: all;
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
   transition-duration: var(--tw-duration, var(--default-transition-duration));
@@ -723,58 +756,48 @@ body {
   transition-duration: 100ms;
   --tw-ease: var(--ease-in);
   transition-timing-function: var(--ease-in);
-  &:hover {
-    @media (hover: hover) {
-      background-color: color-mix(in srgb, #000 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-black) 50%, transparent);
-      }
-    }
-  }
   @media (width >= 48rem) {
     padding-inline: calc(var(--spacing) * 6);
   }
   @media (width >= 48rem) {
     padding-block: calc(var(--spacing) * 3.5);
   }
-  @media (prefers-color-scheme: dark) {
-    background-color: var(--color-white);
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.dark .btn {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.btn:hover {
+  background-color: color-mix(in srgb, #000 50%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in srgb, var(--color-black) 50%, transparent);
   }
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-black);
-  }
-  @media (prefers-color-scheme: dark) {
-    &:hover {
-      @media (hover: hover) {
-        background-color: color-mix(in srgb, #fff 90%, transparent);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-white) 90%, transparent);
-        }
-      }
-    }
+}
+.dark .btn:hover {
+  background-color: color-mix(in srgb, #fff 90%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in srgb, var(--color-white) 90%, transparent);
   }
 }
 .sec {
   border-radius: var(--radius-lg);
-  background-color: #E6E6E6;
   padding-inline: calc(var(--spacing) * 6);
   padding-block: calc(var(--spacing) * 3);
-  color: var(--color-black);
   --tw-shadow: 0px 1px 2px var(--tw-shadow-color, rgba(0,0,0,0.05));
   box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  @media (prefers-color-scheme: dark) {
-    background-color: color-mix(in srgb, oklch(70.7% 0.022 261.325) 50%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-gray-400) 50%, transparent);
-    }
-  }
+  background-color: var(--color-gray-light);
+  color: var(--color-black);
+}
+.dark .sec {
+  background-color: rgba(156, 163, 175, 0.5);
 }
 .heading {
   font-size: var(--text-3xl);
   line-height: var(--tw-leading, var(--text-3xl--line-height));
   --tw-font-weight: var(--font-weight-bold);
   font-weight: var(--font-weight-bold);
-  color: var(--color-slate-950);
   @media (width >= 40rem) {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
@@ -782,9 +805,10 @@ body {
   @media (width >= 48rem) {
     font-size: 64px;
   }
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-white);
-  }
+  color: #020617;
+}
+.dark .heading {
+  color: var(--color-white);
 }
 .desc {
   margin-top: calc(var(--spacing) * 6);
@@ -792,10 +816,6 @@ body {
   line-height: var(--tw-leading, var(--text-base--line-height));
   --tw-font-weight: var(--font-weight-normal);
   font-weight: var(--font-weight-normal);
-  color: color-mix(in srgb, #000 75%, transparent);
-  @supports (color: color-mix(in lab, red, red)) {
-    color: color-mix(in oklab, var(--color-black) 75%, transparent);
-  }
   @media (width >= 40rem) {
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
@@ -804,9 +824,13 @@ body {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-slate-300);
+  color: color-mix(in srgb, #000 75%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    color: color-mix(in srgb, var(--color-black) 75%, transparent);
   }
+}
+.dark .desc {
+  color: #cbd5f5;
 }
 .sub-heading {
   font-size: var(--text-3xl);
@@ -815,7 +839,6 @@ body {
   font-weight: var(--font-weight-semibold);
   --tw-tracking: var(--tracking-tight);
   letter-spacing: var(--tracking-tight);
-  color: var(--color-black);
   @media (width >= 40rem) {
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
@@ -824,9 +847,10 @@ body {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
   }
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-white);
-  }
+  color: var(--color-black);
+}
+.dark .sub-heading {
+  color: var(--color-white);
 }
 .featured-section {
   margin-top: calc(var(--spacing) * 37.5);
@@ -849,9 +873,9 @@ body {
 }
 .card {
   width: 100%;
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-white);
-  }
+}
+.dark .card {
+  color: var(--color-white);
 }
 .card-image {
   aspect-ratio: 1 / 1;
@@ -866,9 +890,9 @@ body {
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
   color: var(--color-black);
-  @media (prefers-color-scheme: dark) {
-    color: var(--color-white);
-  }
+}
+.dark .card-title {
+  color: var(--color-white);
 }
 .card-content {
   padding-right: calc(var(--spacing) * 6);
@@ -879,10 +903,14 @@ body {
     margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
   }
+  border-radius: var(--radius-xl);
+  border-style: var(--tw-border-style);
+  border-width: 1px;
   padding: calc(var(--spacing) * 6);
   @media (width >= 40rem) {
     padding: calc(var(--spacing) * 8);
   }
+  border-color: var(--color-border);
 }
 .testimonial-card-avatar-text {
   display: flex;
@@ -913,7 +941,7 @@ body {
 .testimonial-text-desc {
   --tw-font-weight: var(--font-weight-medium);
   font-weight: var(--font-weight-medium);
-  color: #828282;
+  color: var(--color-gray-medium);
 }
 .footer-icon {
   width: calc(var(--spacing) * 5);
@@ -948,6 +976,26 @@ body {
   display: flex;
   flex-direction: column;
   gap: calc(var(--spacing) * 6);
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
 }
 @property --tw-space-y-reverse {
   syntax: "*";
@@ -1089,6 +1137,11 @@ body {
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-rotate-x: initial;
+      --tw-rotate-y: initial;
+      --tw-rotate-z: initial;
+      --tw-skew-x: initial;
+      --tw-skew-y: initial;
       --tw-space-y-reverse: 0;
       --tw-space-x-reverse: 0;
       --tw-border-style: solid;

@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+:root {
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray-light: #e6e6e6;
+  --color-gray-medium: #828282;
+  --color-gray-dark: #454545;
+  --color-border: #e6e6e6;
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
@@ -9,24 +18,52 @@ body {
 }
 
 .btn {
-  @apply bg-black text-white rounded-lg px-3 py-2 md:px-6 md:py-3.5 dark:bg-white dark:text-black cursor-pointer transition-all duration-100 ease-in hover:bg-black/50 dark:hover:bg-white/90;
+  @apply rounded-lg px-3 py-2 md:px-6 md:py-3.5 cursor-pointer transition-all duration-100 ease-in;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.dark .btn {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.btn:hover {
+  background-color: color-mix(in srgb, var(--color-black) 50%, transparent);
+}
+.dark .btn:hover {
+  background-color: color-mix(in srgb, var(--color-white) 90%, transparent);
 }
 
 .sec {
-  @apply px-6 py-3 rounded-lg bg-[#E6E6E6] text-black dark:bg-gray-400/50
-                     shadow-[0px_1px_2px_rgba(0,0,0,0.05)];
+  @apply px-6 py-3 rounded-lg shadow-[0px_1px_2px_rgba(0,0,0,0.05)];
+  background-color: var(--color-gray-light);
+  color: var(--color-black);
+}
+.dark .sec {
+  background-color: rgba(156, 163, 175, 0.5);
 }
 
 .heading {
-  @apply text-3xl sm:text-4xl md:text-[64px] font-bold text-slate-950 dark:text-white;
+  @apply text-3xl sm:text-4xl md:text-[64px] font-bold;
+  color: #020617;
+}
+.dark .heading {
+  color: var(--color-white);
 }
 
 .desc {
-  @apply text-base sm:text-lg md:text-2xl font-normal mt-6 text-black/75 dark:text-slate-300;
+  @apply text-base sm:text-lg md:text-2xl font-normal mt-6;
+  color: color-mix(in srgb, var(--color-black) 75%, transparent);
+}
+.dark .desc {
+  color: #cbd5f5;
 }
 
 .sub-heading {
-  @apply font-semibold text-3xl text-black sm:text-4xl md:text-5xl tracking-tight dark:text-white;
+  @apply font-semibold text-3xl sm:text-4xl md:text-5xl tracking-tight;
+  color: var(--color-black);
+}
+.dark .sub-heading {
+  color: var(--color-white);
 }
 
 .featured-section {
@@ -38,7 +75,10 @@ body {
 }
 
 .card {
-  @apply w-full dark:text-white;
+  @apply w-full;
+}
+.dark .card {
+  color: var(--color-white);
 }
 
 .card-image {
@@ -46,7 +86,11 @@ body {
 }
 
 .card-title {
-  @apply text-2xl font-medium text-black dark:text-white mt-6;
+  @apply text-2xl font-medium mt-6;
+  color: var(--color-black);
+}
+.dark .card-title {
+  color: var(--color-white);
 }
 
 .card-content {
@@ -54,7 +98,8 @@ body {
 }
 
 .testimonial-card {
-  @apply p-6 space-y-6 sm:p-8;
+  @apply rounded-xl border p-6 space-y-6 sm:p-8;
+  border-color: var(--color-border);
 }
 
 .testimonial-card-avatar-text {
@@ -78,7 +123,8 @@ body {
 }
 
 .testimonial-text-desc {
-  @apply font-medium text-[#828282];
+  @apply font-medium;
+  color: var(--color-gray-medium);
 }
 
 .footer-icon {
