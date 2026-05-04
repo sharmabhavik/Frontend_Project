@@ -33,6 +33,12 @@ body {
   background-color: color-mix(in srgb, var(--color-white) 90%, transparent);
 }
 
+.nav-container {
+  @apply bg-white/40 dark:bg-black/70 backdrop-blur-lg
+         text-black dark:text-white
+         transition-all duration-500 ease-in;
+}
+
 .sec {
   @apply px-6 py-3 rounded-lg shadow-[0px_1px_2px_rgba(0,0,0,0.05)];
   background-color: var(--color-gray-light);
@@ -125,6 +131,66 @@ body {
 .testimonial-text-desc {
   @apply font-medium;
   color: var(--color-gray-medium);
+}
+
+/* ================= SHOP PAGE ================= */
+
+/* HERO CONTENT */
+.shop-hero-content {
+  @apply relative z-10 flex h-full flex-col items-center justify-center text-center 
+         px-6 sm:px-10 md:px-20 max-w-4xl mx-auto;
+}
+
+.shop-hero-button {
+  @apply mt-10 rounded-lg px-6 md:px-8 py-3 md:py-5 text-lg md:text-xl font-medium;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* FEATURE SECTION */
+.shop-feature-section {
+  @apply mt-30 px-6 sm:px-8 md:px-20;
+}
+
+.shop-feature-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16 lg:gap-32;
+}
+
+.shop-feature-content {
+  @apply flex flex-col items-center text-center gap-4 space-y-4 
+         md:items-start md:text-left;
+}
+
+.shop-feature-title {
+  @apply text-3xl sm:text-[36px] md:text-[40px] font-semibold;
+}
+
+.shop-feature-copy {
+  @apply text-sm sm:text-base md:text-xl;
+  color: var(--color-muted);
+}
+
+.shop-feature-actions {
+  @apply flex w-full flex-col gap-3 pt-2 sm:w-auto sm:flex-row;
+}
+
+.shop-feature-button-primary {
+  @apply w-full sm:w-auto rounded-md px-6 py-3.5 font-medium;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.shop-feature-button-secondary {
+  @apply w-full sm:w-auto rounded-md px-6 py-3 font-medium bg-gray-100;
+}
+
+.shop-feature-image {
+  @apply w-full rounded-lg object-cover h-auto;
+}
+
+/* ================= PRODUCT ================= */
+.product-heading {
+  @apply text-3xl mt-37.5 sm:text-4xl md:text-5xl font-semibold text-center md:text-left;
 }
 
 .footer-icon {

@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
+    <section class="relative h-180 bg-[url('./Images/shop-page-images/shop-bg.jpg')] bg-cover bg-center text-white">
+        <!-- Dark bg overlay -->
+        <div class="absolute inset-0 bg-black/60"></div>
+
+        <!-- Header -->
+        <header class="sticky top-0 z-50">
+            <nav
+                class="nav-container dark:bg-black/70 backdrop-blur-lg text-black dark:text-white transition-all duration-500 ease-in">
+
+                <div class="flex items-center justify-between px-6 md:px-20 py-6 md:py-8">
+
+                    <!-- LOGO -->
+                    <h1 class="text-xl font-bold tracking-wide">Asgard</h1>
+
+                    <!-- MOBILE -->
+                    <div class="md:hidden flex items-center text-2xl">
+                        <i class="fa fa-bars"></i>
+                    </div>
+
+                    <!-- DESKTOP -->
+                    <div class="hidden md:flex items-center gap-12">
+
+                        <ul class="flex items-center space-x-12 px-1">
+                            <li><a href="#" class="nav-link">Home</a></li>
+                            <li><a href="#" class="nav-link">About</a></li>
+                            <li><a href="#" class="nav-link">Services</a></li>
+                        </ul>
+
+                        <button class="btn">Subscribe</button>
+
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Content -->
+        <div class="shop-hero-content flex flex-col items-center gap-4 md:gap-6">
+            <h1 class="text-4xl md:text-[64px] font-bold">
+                Discover The Power !
+            </h1>
+
+            <p class="text-lg md:text-[24px] text-gray-200 max-w-xl mb-2">
+                Explore thoughtfully curated products crafted to bring simplicity and
+                elegance into your daily life.
+            </p>
+
+            <button class="shop-hero-button">Learn More</button>
+        </div>
+    </section>
+
+    <!-- shop feature section -->
+    <main>
+        <section class="shop-feature-section">
+            <div class="shop-feature-grid">
+                <div class="shop-feature-content">
+                    <h2 class="shop-feature-title">Naturally Crafted</h2>
+                    <p class="shop-feature-copy">
+                        Experience products made with care and quality materials, designed to
+                        enhance your lifestyle with a touch of authenticity.
+                    </p>
+                    <div class="shop-feature-actions">
+                        <button class="shop-feature-button-primary">Explore Collection</button>
+                        <button class="shop-feature-button-secondary">Learn More</button>
+                    </div>
+                </div>
+                <div>
+                    <img class="shop-feature-image"
+                        src="Images/shop-page-images/second-section/second-section-first-img.png" alt="images" />
+                </div>
+            </div>
+        </section>
+        <!-- shop feature second  -->
+        <section class="shop-feature-section">
+            <div class="shop-feature-grid">
+                <div class="order-2 md:order-1">
+                    <img class="shop-feature-image"
+                        src="Images/shop-page-images/second-section/second-section-second-img.png" alt="images" />
+                </div>
+                <div class="shop-feature-content order-1 md:order-2">
+                    <h2 class="shop-feature-title">Minimal Design</h2>
+                    <p class="shop-feature-copy">
+                        Clean, modern aesthetics that blend seamlessly into your space while
+                        maintaining functionality and comfort.
+                    </p>
+
+                    <div class="shop-feature-actions">
+                        <button class="shop-feature-button-primary">Browse Now</button>
+                        <button class="shop-feature-button-secondary">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Product -->
+        <section class="px-6 py-16 md:px-20">
+            <h2 class="product-heading">Featured Products</h2>
+
+            <div class="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 items-stretch">
+                <!-- LEFT -->
+                <div class="flex h-full flex-col gap-4">
+                    <img src="Images/shop-page-images/third-section/third-section-first-img.jpg" alt="Featured product"
+                        class="w-full rounded-lg object-cover aspect-4/3 lg:aspect-auto lg:h-full" />
+
+                    <div class="space-y-1 text-lg sm:text-xl">
+                        <h3 class="font-semibold">Organic Fruit Basket</h3>
+                        <p class="text-gray-500">
+                            A fresh selection of seasonal fruits sourced from trusted farms.
+                        </p>
+                        <span class="font-medium">$20.99</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT -->
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+                    <div class="flex h-full flex-col gap-3">
+                        <img src="Images/shop-page-images/third-section/third-section-second-img.jpg" alt="Product"
+                            class="w-full rounded-lg object-cover aspect-4/3 lg:h-[283.5px] lg:aspect-auto" />
+                        <div class="space-y-1 text-lg sm:text-xl">
+                            <h3 class="font-semibold">Premium Citrus Pack</h3>
+                            <p class="text-gray-500">
+                                Handpicked citrus fruits packed with freshness and flavor.
+                            </p>
+                            <span class="font-medium">$22.90</span>
+                        </div>
+                    </div>
+
+                    <div class="flex h-full flex-col gap-3">
+                        <img src="Images/shop-page-images/third-section/third-section-third-image.jpg" alt="Product"
+                            class="w-full rounded-lg object-cover aspect-4/3 lg:h-[283.5px] lg:aspect-auto" />
+                        <div class="space-y-1 text-lg sm:text-xl">
+                            <h3 class="font-semibold">Exotic Fruit Mix</h3>
+                            <p class="text-gray-500">
+                                A delightful mix of rare and exotic fruits for a unique taste.
+                            </p>
+                            <span class="font-medium">$20.23</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="px-6 md:px-20 py-16">
+            <h2 class="text-2xl md:text-3xl font-bold mb-10">
+                Why choose us
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 md:gap-20">
+                <div class="space-y-10 md:space-y-12">
+                    <!-- Card -->
+                    <div>
+                        <div class="mb-3">
+                            <img src="Images/vector-avatar/globe-vector.svg" alt="" class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-lg md:text-xl font-medium mb-2">
+                            Curated Worldwide
+                        </h3>
+                        <p class="text-sm md:text-xl text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Temporibus sunt recusandae vitae delectus enim aspernatur eum
+                            maiores explicabo.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="mb-3">
+                            <img src="Images/vector-avatar/lock-vector.svg" alt="" class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-lg md:text-xl font-medium mb-2">
+                            Curated Worldwide
+                        </h3>
+                        <p class="text-sm md:text-xl text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Temporibus sunt recusandae vitae delectus enim aspernatur eum
+                            maiores explicabo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="space-y-10 md:space-y-12">
+                    <!-- Card -->
+                    <div>
+                        <div class="mb-3">
+                            <img src="Images/vector-avatar/profile-vector.svg" alt="" class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-lg md:text-xl font-medium mb-2">
+                            Curated Worldwide
+                        </h3>
+                        <p class="text-sm md:text-xl text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Temporibus sunt recusandae vitae delectus enim aspernatur eum
+                            maiores explicabo.
+                        </p>
+                    </div>
+
+                    <!-- Card -->
+                    <div>
+                        <div class="mb-3">
+                            <img src="Images/vector-avatar/calendar-vector.svg" alt="" class="w-8 h-8" />
+                        </div>
+                        <h3 class="text-lg md:text-xl font-medium mb-2">
+                            Curated Worldwide
+                        </h3>
+                        <p class="text-sm md:text-xl text-gray-600">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                            Temporibus sunt recusandae vitae delectus enim aspernatur eum
+                            maiores explicabo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+
+    <footer class="border-t border-gray-200 px-6 py-10 md:px-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid gap-12 md:gap-16 grid-cols-1 lg:grid-cols-6">
+
+                <div class="flex flex-row items-center justify-between 
+                    lg:flex-col lg:items-start lg:justify-start 
+                    gap-4 lg:gap-22 lg:col-span-3">
+
+                    <h1 class="text-xl font-semibold tracking-wide">Asgard</h1>
+
+                    <div class="flex gap-2">
+                        <div class="icon-wrapper"><img src="Images/footer-icons/facebook.svg" class="footer-icon" />
+                        </div>
+                        <div class="icon-wrapper"><img src="Images/footer-icons/linkedin.svg" class="footer-icon" />
+                        </div>
+                        <div class="icon-wrapper"><img src="Images/footer-icons/youtube.svg" class="footer-icon" />
+                        </div>
+                        <div class="icon-wrapper"><img src="Images/footer-icons/instagram.svg" class="footer-icon" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-2 gap-10 md:col-span-1 lg:col-span-3 lg:grid-cols-3">
+
+                    <div>
+                        <h2 class="font-semibold mb-6">Home</h2>
+                        <ul class="space-y-6 text-(--color-gray-dark)">
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="font-semibold mb-6">About</h2>
+                        <ul class="space-y-6 text-(--color-gray-dark)">
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="font-semibold mb-6">Services</h2>
+                        <ul class="space-y-6 text-(--color-gray-dark)">
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                            <li><a href="#" class="font-medium hover:text-black transition">Page</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
