@@ -133,9 +133,6 @@ body {
   color: var(--color-gray-medium);
 }
 
-/* ================= SHOP PAGE ================= */
-
-/* HERO CONTENT */
 .shop-hero-content {
   @apply relative z-10 flex h-full flex-col items-center justify-center text-center 
          px-6 sm:px-10 md:px-20 max-w-4xl mx-auto;
@@ -188,9 +185,8 @@ body {
   @apply w-full rounded-lg object-cover h-auto;
 }
 
-/* ================= PRODUCT ================= */
 .product-heading {
-  @apply text-3xl mt-37.5 sm:text-4xl md:text-5xl font-semibold text-center md:text-left;
+  @apply text-3xl sm:text-4xl md:text-5xl font-semibold text-center md:text-left;
 }
 
 .footer-icon {
